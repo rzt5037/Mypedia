@@ -38,5 +38,7 @@ class ChargesController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.standard!
+    Wiki.where(user_id: @user.id).update_all(private: false)
+    redirect_to wikis_path
   end
 end
