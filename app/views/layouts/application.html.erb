@@ -16,10 +16,10 @@
 
       <div class="pull-right">
         <% if is_standard_user?  %>
-          <li><%= button_to "Premium Subscription", new_charge_path, :class => 'btn btn-success' %></li>
+          <li><%= button_to "Premium Subscription", new_charge_path, method: :get, :class => 'btn btn-success' %></li>
         <% end %>
         <% if is_premium_user? %>
-          <li><%= button_to "Cancel Premium", charge_path(current_user.id), :class => 'btn btn-danger', method: :patch, data: {confirm: 'Are you sure you want to cancel premium status?'} %></li>
+          <li><%= button_to "Cancel Premium", charge_path(current_user.id), :class => 'btn btn-danger', method: :patch, data: {confirm: 'Are you sure you want to cancel premium status?'"\n" 'All private wikis will become public.'} %></li>
         <% end %>
       </div>
     </ul>

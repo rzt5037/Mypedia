@@ -18,8 +18,10 @@ users = User.all
 
 15.times do
   Wiki.create!(
+    user:     users.sample,
     title:    Faker::ElderScrolls.creature,
-    body:     Faker::Lovecraft.sentence
+    body:     Faker::Lovecraft.sentence,
+    private:  false
   )
 end
 wikis = Wiki.all

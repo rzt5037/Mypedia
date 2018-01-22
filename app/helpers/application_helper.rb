@@ -1,9 +1,13 @@
 module ApplicationHelper
   def is_standard_user?
-    current_user.standard?
+    if current_user
+      current_user.standard?
+    end
   end
 
   def is_premium_user?
-    current_user.premium?
+    if current_user
+      current_user.premium?
+    end
   end
 end
