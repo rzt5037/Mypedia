@@ -1,0 +1,12 @@
+<h1> Add or remove collaborators. </h2>
+
+<div class="col-md-8">
+  <%= form_for @collaborator, url: wiki_collaborators_path do |f| %>
+    <div class="form-group">
+      <%= f.label :user_id %>
+      <%= f.text_field :user_id, class: 'form-control', placeholder: "Enter user id to add or remove" %>
+      <%= f.hidden_field :wiki_id, value: params[:wiki_id] %>
+    </div>
+    <%= f.submit "Add Collaborator", class: 'btn btn-success' %>
+  <% end %>
+</end>
