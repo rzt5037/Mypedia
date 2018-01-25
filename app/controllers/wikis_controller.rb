@@ -6,6 +6,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+    @collaborator = Collaborator.where(wiki_id: params[:id])
   end
 
   def new

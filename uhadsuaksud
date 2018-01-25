@@ -1,0 +1,23 @@
+<% form_for @collaborator, url: wiki_collaborator_path(@collaborator) do |f| %>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, class: 'form-control', placeholder: "Enter user id to remove" %>
+    <%= f.hidden_field :wiki_id, value: params[:wiki_id] %>
+  </div>
+  <%= f.submit "Remove Collaborator", class: 'btn btn-danger' %>
+<% end %>
+
+
+<%= button_to "delete", {:controller => :meals, :action => 'destroy', :id => recipe.id }, :method => :delete %>
+
+@collaborator = wiki_collab.where(user_id: :user_id) wiki_id: params[:wiki_id]
+
+
+<%= form_for @collaborator, url: wiki_collaborator_path(params[:wiki_id],:user_id) do |f| %>
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, class: 'form-control', placeholder: "Enter user id to remove" %>
+    <%= f.hidden_field :wiki_id, value: params[:wiki_id] %>
+  </div>
+  <%= f.submit "Remove Collaborator", class: 'btn btn-danger' %>
+<% end %>
