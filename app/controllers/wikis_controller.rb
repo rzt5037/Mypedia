@@ -1,11 +1,12 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    @collaborator = Collaborator.where(wiki_id: params[:id])
   end
 
   def new
